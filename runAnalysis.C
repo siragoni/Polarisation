@@ -35,63 +35,6 @@ void runAnalysis(Int_t opt)
 
 
 
-  Int_t listOfGoodRunNumbersLHC18l7[] = { 295585, 295586, 295587, 295588, 295589, 295612,
-                                          295615, 295665, 295666, 295667, 295668, 295671,
-                                          295673, 295675, 295676, 295677, 295714, 295716,
-                                          295717, 295718, 295719, 295723, 295725, 295753,
-                                          295754, 295755, 295758, 295759, 295762, 295763,
-                                          295786, 295788, 295791, 295816, 295818, 295819,
-                                          295822, 295825, 295826, 295829, 295831, 295854,
-                                          295855, 295856, 295859, 295860, 295861, 295863,
-                                          295881, 295908, 295909, 295910, 295913, 295936,
-                                          295937, 295941, 295942, 295943, 295945, 295947, // 60
-                                          296061, 296062, 296063, 296065, 296066, 296068,
-                                          296123, 296128, 296132, 296133, 296134, 296135,
-                                          296142, 296143, 296191, 296192, 296194, 296195,
-                                          296196, 296197, 296198, 296241, 296242, 296243,
-                                          296244, 296246, 296247, 296269, 296270, 296273,
-                                          296279, 296280, 296303, 296304, 296307, 296309,
-                                          296312, 296376, 296377, 296378, 296379, 296380, // mind that 296376 is rejected by data
-                                          296381, 296383, 296414, 296419, 296420, 296423,
-                                          296424, 296433, 296472, 296509, 296510, 296511,
-                                          296514, 296516, 296547, 296548, 296549, 296550, // 60
-                                          296551, 296552, 296553, 296615, 296616, 296618,
-                                          296619, 296622, 296623, // end 18q MC
-                                          296690, 296691, 296694, 296749, 296750, 296781,
-                                          296784, 296785, 296786, 296787, 296791, 296793,
-                                          296794, 296799, 296836, 296838, 296839, 296848,
-                                          296849, 296850, 296851, 296852, 296890, 296894,
-                                          296899, 296900, 296903, 296930, 296931, 296932,
-                                          296934, 296935, 296938, 296941, 296966, 296967,
-                                          296968, 296969, 296971, 296975, 296976, 296977, // 296977 is rejected
-                                          296979, 297029, 297031, 297035, 297085, 297117, // 57
-                                          297118, 297119, 297123, 297124, 297128, 297129,
-                                          297132, 297133, 297193, 297194, 297196, 297218,
-                                          297219, 297221, 297222, 297278, 297310, 297312,
-                                          297315, 297317, 297363, 297366, 297367, 297372,
-                                          297379, 297380, 297405, 297408, 297413, 297414,
-                                          297415, 297441, 297442, 297446, 297450, 297451,
-                                          297452, 297479, 297481, 297483, 297512, 297537,
-                                          297540, 297541, 297542, 297544, 297558, 297588,
-                                          297590, 297595, 297623, 297624 };               // 52  = 229
-
-
-
-  Int_t listOfGoodRunNumbersLHC15o[] = { /*244918,*/ 244980, 244982, 244983, 245064, 245066, 245068, 245145, 245146, 245151,
-                                         245152, 245231, 245232, 245233, 245253, 245259, 245343, 245345, 245346, 245347,
-                                         245353, 245401, 245407, 245409, 245410, 245446, 245450, 245496, 245501, 245504,
-                                         245505, 245507, 245535, 245540, 245542, 245543, 245554, 245683, 245692, 245700,
-                                         245705, 245729, 245731, 245738, 245752, 245759, 245766, 245775, 245785, 245793,
-                                         245829, 245831, 245833, 245949, 245952, 245954, 245963, 245996, 246001, 246003,
-                                         246012, 246036, 246037, 246042, 246048, 246049, 246053, 246087, 246089, 246113,
-                                         246115, 246148, 246151, 246152, 246153, 246178, 246181, 246182, 246217, 246220,
-                                         246222, 246225, 246272, 246275, 246276, 246390, 246391, 246392, 246424, 246428,
-                                         246431, 246433, 246434, 246487, 246488, 246493, 246495, 246675, 246676, 246750,
-                                         246751, 246755, 246757, 246758, 246759, 246760, 246763, 246765, 246804, 246805,
-                                         246806, 246807, 246808, 246809, 246844, 246845, 246846, 246847, 246851, 246855,
-                                         246859, 246864, 246865, 246867, 246871, 246930, 246937, 246942, 246945, 246948,
-                                         246949, 246980, 246982, 246984, 246989, 246991, 246994       //136
-                                       };
 
 
     // since we will compile a class, tell root where to look for headers
@@ -176,34 +119,44 @@ void runAnalysis(Int_t opt)
 
 
 
-      // alienHandler->SetGridDataDir("/alice/sim/2018/LHC18l7/kTwoGammaToMuMedium/");
-      // alienHandler->SetGridDataDir("/alice/sim/2018/LHC18l7/kIncohJpsiToMu/");
-      // alienHandler->SetGridDataDir("/alice/sim/2018/LHC18l7/kIncohPsi2sToMuPi/");
-      // alienHandler->SetGridDataDir("/alice/sim/2018/LHC18l7/kCohJpsiToMu/");
-      alienHandler->SetGridDataDir("/alice/sim/2018/LHC18l7/kCohJpsiToMuLP/");
-      // alienHandler->SetGridDataDir("/alice/sim/2018/LHC18l7/kCohJpsiToMuNP/");
-  	  alienHandler->SetDataPattern("*AOD/*AliAOD.root");
-      // for( Int_t iRunLHC18l7 = 20; iRunLHC18l7 <  229; iRunLHC18l7++){
-      for( Int_t iRunLHC18l7 = 0; iRunLHC18l7 <  228; iRunLHC18l7++){
-        // if ( listOfGoodRunNumbersLHC18l7[iRunLHC18l7] == 296269 ) continue;
-        alienHandler->AddRunNumber( listOfGoodRunNumbersLHC18l7[iRunLHC18l7] );
-      }
 
-      // alienHandler->AddRunNumber(295829);
+        // select the input data for 2018 q
+      	if (opt == 0) {
+      	  alienHandler->SetGridDataDir("/alice/data/2018/LHC18q");
+      	  alienHandler->SetDataPattern("*muon_calo_pass3/AOD225/PWGUD/UD_PbPb_AOD/501_20190723-1440/*AliAOD.UPCNano.root");
+      	  // MC has no prefix, data has prefix 000
+      	  alienHandler->SetRunPrefix("000");
+      	  // runnumber
+      	  alienHandler->AddRunNumber(296510);
+          // for( Int_t iRunLHC18q = 0; iRunLHC18q < 128; iRunLHC18q++){
+          //   alienHandler->AddRunNumber( listOfGoodRunNumbersLHC18q[iRunLHC18q] );
+          // }
 
+      	} else if (opt == 1) {
+      	  alienHandler->SetGridDataDir("/alice/data/2018/LHC18r");
+      	  alienHandler->SetDataPattern("*muon_calo_pass3/AOD225/PWGUD/UD_PbPb_AOD/502_20190723-1441/*AliAOD.UPCNano.root");
+      	  // MC has no prefix, data has prefix 000
+      	  alienHandler->SetRunPrefix("000");
+      	  // runnumber
+      	  alienHandler->AddRunNumber(297481);
+          // for( Int_t iRunLHC18r = 0; iRunLHC18r <  97; iRunLHC18r++){
+          //   alienHandler->AddRunNumber( listOfGoodRunNumbersLHC18r[iRunLHC18r] );
+          // }
 
+      	} else if (opt == 2) {
+      	  alienHandler->SetGridDataDir("/alice/data/2015/LHC15o");
+      	  alienHandler->SetDataPattern("*muon_calo_pass1/AOD229/PWGUD/UD_PbPb_AOD/522_20190828-1630/*AliAOD.UPCNano.root");
+      	  // MC has no prefix, data has prefix 000
+      	  alienHandler->SetRunPrefix("000");
+      	  // runnumber
+      	  alienHandler->AddRunNumber(246087);
+          // for( Int_t iRunLHC18r = 0; iRunLHC18r <  97; iRunLHC18r++){
+          //   alienHandler->AddRunNumber( listOfGoodRunNumbersLHC18r[iRunLHC18r] );
+          // }
 
-      // alienHandler->SetGridDataDir("/alice/sim/2016/LHC16b2a/");
-      // // alienHandler->SetGridDataDir("/alice/sim/2016/LHC16b2i/");
-      // // alienHandler->SetGridDataDir("/alice/sim/2016/LHC16b2j/");
-  	  // alienHandler->SetDataPattern("*AOD/*AliAOD.root");
-      // for( Int_t iRunLHC15o = 0; iRunLHC15o < 136; iRunLHC15o++){
-      //   // if( fRunNum == listOfGoodRunNumbersLHC15o[iRunLHC15o] ) checkIfGoodRun = kTRUE;
-      //   alienHandler->AddRunNumber( listOfGoodRunNumbersLHC15o[iRunLHC15o] );
-      // }
-
-
-      // alienHandler->AddRunNumber(245729);
+      	} else {
+      	  cout << " not a valid option ... bye!" << endl;
+      	}
 
 
         // number of files per subjob
@@ -218,21 +171,31 @@ void runAnalysis(Int_t opt)
         // merging: run with "kTRUE" and "full" for normal run
         // to merge on grid run jobs in SetRunMode("terminate")
         // to collect final results set SetMergeViaJDL(kFALSE)
-        // alienHandler->SetMergeViaJDL(kTRUE);
+        alienHandler->SetMergeViaJDL(kTRUE);
 
         /* - The setting to kFALSE is to download the output files
            -
          */
-        alienHandler->SetMergeViaJDL(kFALSE);
+        // alienHandler->SetMergeViaJDL(kFALSE);
         alienHandler->SetMaxMergeStages(3);
 
 
-        TString LHC18l7("LHC18l7");
-        TString LHC16b2("LHC16b2a");
+        TString LHC18q("LHC18q");
+        TString LHC18r("LHC18r");
+        TString LHC15o("LHC15o");
         // define the output folders
-        alienHandler->SetGridWorkingDir("MC_LHC18l7_longitudinalUnfold");
-        alienHandler->SetGridOutputDir(LHC18l7.Data());
-        // alienHandler->SetGridOutputDir(LHC18l7.Data());
+        // alienHandler->SetGridWorkingDir("myWorkingDir");
+        // alienHandler->SetGridWorkingDir("CheckAD_null");
+        // alienHandler->SetGridWorkingDir("AD_HWandSW");
+        // alienHandler->SetGridWorkingDir("PbPb15o_polPt2_test");
+        if (opt == 0) alienHandler->SetGridWorkingDir("PbPb18q_pol_test2");
+        if (opt == 1) alienHandler->SetGridWorkingDir("PbPb18r_pol_test2");
+        if (opt == 2) alienHandler->SetGridWorkingDir("PbPb15o_pol_test2");
+
+        // alienHandler->SetGridOutputDir("myOutputDir");
+        if (opt == 0) alienHandler->SetGridOutputDir(LHC18q.Data());
+        if (opt == 1) alienHandler->SetGridOutputDir(LHC18r.Data());
+        if (opt == 2) alienHandler->SetGridOutputDir(LHC15o.Data());
 
 
 
@@ -250,12 +213,12 @@ void runAnalysis(Int_t opt)
             /* - The option FULL is to send the full analysis.
                -
              */
-            // alienHandler->SetRunMode("full");
+            alienHandler->SetRunMode("full");
 
             /* - This option TERMINATE is used for the merging of the files.
                -
              */
-            alienHandler->SetRunMode("terminate");
+            // alienHandler->SetRunMode("terminate");
             mgr->StartAnalysis("grid");
         }
     }
